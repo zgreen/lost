@@ -11,35 +11,40 @@ html {
   font-family: sans-serif;
   font-weight: bold;
   color: white;
-  padding-bottom: $gutter;
+  padding: $gutter;
 }
 
-h1 {
+header {
   text-align: center;
-  margin: ($gutter * 2) 0;
-  a {
-    color: #333;
-    text-decoration: none;
-  }
+  margin: $gutter 0 ($gutter * 2);
 }
 
 figure {
   height: 100px;
   line-height: 100px;
   text-align: center;
-  margin-bottom: $gutter;
+  margin-top: ($gutter / 2);
+  margin-bottom: ($gutter / 2);
+  figure {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 section {
-  background: #eee;
   margin-top: $gutter;
   margin-bottom: $gutter;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   // Responsive Blocks
   &:nth-of-type(1) {
-    @include edit;
+    background: #42CAFD;
     figure {
       @include column(1);
+      background: darken(#42CAFD, 10%);
       @media (min-width: 500px) {
         @include column(1/2);
       }
@@ -54,9 +59,10 @@ section {
 
   // Offset
   &:nth-of-type(2) {
-    @include edit(green);
+    background: #66B3BA;
     figure {
       @include column(1/3);
+      background: darken(#66B3BA, 10%);
       &:first-child {
         @include offset(1/3);
       }
@@ -65,23 +71,26 @@ section {
 
   // Nesting
   &:nth-of-type(3) {
-    @include edit(red);
+    background: #8EB19D;
     figure {
       @include column(1/3);
+      background: darken(#8EB19D, 10%);
       .row {
         @include row(1/2 1/3); // you only need to set this is old == true
       }
       figure {
         @include column(1/2 1/3); // you only need to set the parent context (the second ratio) this is old == true
+        background: darken(#8EB19D, 20%);
       }
     }
   }
 
   // Source Ordering
   &:nth-of-type(4) {
-    @include edit(orange);
+    background: #F6EFA6;
     figure {
       @include column(1/2);
+      background: darken(#F6EFA6, 10%);
       &:first-child {
         @include shift(1/2);
       }
@@ -93,35 +102,13 @@ section {
 
   // Alignment
   &:nth-of-type(5) {
-    @include edit(purple);
+    background: #F0D2D1;
     @include align;
     height: 300px;
     figure {
       @include column(1/3);
+      background: darken(#F0D2D1, 10%);
       margin-bottom: 0;
-    }
-  }
-
-  // Background Color
-  &:nth-of-type(6) {
-    @include edit(black);
-    figure {
-      @include column(1/3);
-    }
-  }
-
-  // Background Color to the Edges
-  &:nth-of-type(7) {
-    @include center(0);
-    figure {
-      @include column(1/3);
-      background: rgba(indigo, .1);
-      .row {
-        @include row(1/2 1/3); // you only need to set this is old == true
-        figure {
-          @include column(1/2 1/3); // you only need to set the parent context (the second ratio) this is old == true
-        }
-      }
     }
   }
 
