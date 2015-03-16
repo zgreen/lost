@@ -10,25 +10,25 @@ html
   font-family: sans-serif
   font-weight: bold
   color: white
-  padding: gutter
+  padding: $gutter
 
 header
   text-align: center
-  margin: gutter 0 (gutter * 2)
+  margin: $gutter 0 ($gutter * 2)
 
 figure
   height: 100px
   line-height: 100px
   text-align: center
-  margin-top: (gutter / 2)
-  margin-bottom: (gutter / 2)
+  margin-top: ($gutter / 2)
+  margin-bottom: ($gutter / 2)
   figure
     margin-top: 0
     margin-bottom: 0
 
 section
-  margin-top: gutter
-  margin-bottom: gutter
+  margin-top: $gutter
+  margin-bottom: $gutter
 
   &:last-of-type
     margin-bottom: 0
@@ -97,7 +97,7 @@ section
       height: auto
       line-height: 25px
       font-weight: normal
-      padding: (gutter / 2)
+      padding: ($gutter / 2)
       background: darken(#F19A3E, 10%)
       @media (min-width: 500px)
         column(1/2)
