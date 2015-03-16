@@ -91,11 +91,13 @@ section {
     figure {
       @include column(1/2);
       background: darken(#F6EFA6, 10%);
-      &:first-child {
-        @include shift(1/2);
-      }
-      &:last-child {
-        @include shift(-1/2);
+      @media (min-width: 800px) {
+        &:first-child {
+          @include shift(1/2);
+        }
+        &:last-child {
+          @include shift(-1/2);
+        }
       }
     }
   }

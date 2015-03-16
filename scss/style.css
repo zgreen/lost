@@ -113,12 +113,13 @@ section {
       margin-left: 15px;
       margin-right: 15px;
       background: #f1e778; }
-      section:nth-of-type(4) figure:first-child {
-        position: relative;
-        left: calc(100% * 0.5); }
-      section:nth-of-type(4) figure:last-child {
-        position: relative;
-        left: calc(100% * -0.5); }
+      @media (min-width: 800px) {
+        section:nth-of-type(4) figure:first-child {
+          position: relative;
+          left: calc(100% * 0.5); }
+        section:nth-of-type(4) figure:last-child {
+          position: relative;
+          left: calc(100% * -0.5); } }
   section:nth-of-type(5) {
     background: #F0D2D1;
     display: flex;
