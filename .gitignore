@@ -3,3 +3,7 @@
 ### Sass ###
 .sass-cache
 *.css.map
+
+
+### Custom ###
+/demo
