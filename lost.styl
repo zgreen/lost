@@ -101,7 +101,9 @@ block($fraction = '1/1', $dir = row, $cycle = 1, $gut = $gutter, $output = norma
         float: left
       if $masonry-friendly is false
         if $rtl
-          margin-left: $gut
+          &:nth-child(n)
+            float: right
+            margin-left: $gut
           if $cycle != 1
             &:nth-child({$cycle}n)
               margin-left: 0
@@ -112,12 +114,8 @@ block($fraction = '1/1', $dir = row, $cycle = 1, $gut = $gutter, $output = norma
               float: left
         else
           &:nth-child(n)
-            if $rtl
-              float: right
-              margin-left: $gut
-            else
-              float: left
-              margin-right: $gut
+            float: left
+            margin-right: $gut
           if $cycle != 1
             &:nth-child({$cycle}n)
               margin-right: 0
