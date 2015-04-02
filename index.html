@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Lost Grid Example</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>LostGrid Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="js/vendor/selectivizr-1.0.3b.min.js"></script>
+      <script src="js/vendor/respond-1.4.2.min.js"></script>
+      <script src="js/vendor/calc.min.js"></script>
+    <![endif]-->
   </head>
   <body>
+    <!--[if IE]>
+      <div class="browsehappy">
+        <p>
+          You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.
+        </p>
+      </div>
+    <![endif]-->
 
 
     <header>
@@ -15,85 +31,94 @@
     </header>
 
     <!-- Blocks -->
-    <div class="wrap">
-      <section>
-        <figure>1</figure>
-        <figure>2</figure>
-        <figure>3</figure>
-        <figure>4</figure>
-        <figure>5</figure>
-        <figure>6</figure>
-      </section>
-    </div>
+    <section>
+      <figure>1</figure>
+      <figure>2</figure>
+      <figure>3</figure>
+      <figure>4</figure>
+      <figure>5</figure>
+      <figure>6</figure>
+    </section>
 
     <!-- Offset -->
-    <div class="wrap">
-      <section>
-        <figure>1</figure>
-        <figure>2</figure>
-      </section>
-    </div>
+    <section>
+      <figure>1</figure>
+      <figure>2</figure>
+    </section>
 
     <!-- Nesting -->
-    <div class="wrap">
-      <section>
-        <figure>
-          <section>
-            <figure>1</figure>
-            <figure>2</figure>
-          </section>
-        </figure>
-        <figure>1</figure>
-        <figure>2</figure>
-      </section>
-    </div>
-
-    <!-- Source Ordering -->
-    <div class="wrap">
-      <section>
-        <figure>1</figure>
-        <figure>2</figure>
-      </section>
-    </div>
+    <section>
+      <figure>a</figure>
+      <figure>a</figure>
+      <figure>
+        <figure>b</figure>
+        <figure>b</figure>
+      </figure>
+    </section>
 
     <!-- Alignment -->
-    <div class="wrap">
+    <section>
       <figure>1</figure>
-    </div>
+    </section>
 
     <!-- Clear/Unclear -->
-    <div class="wrap">
-      <section>
-        <figure>
-          1 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem rem nam dolore repellendus provident, voluptas necessitatibus vel cupiditate delectus, doloremque incidunt accusantium quia! Nisi molestiae totam natus, in assumenda accusantium.
-        </figure>
-        <figure>
-          2 - Lorem ipsum dolor sit amet.
-        </figure>
-        <figure>
-          3 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sunt harum ut rerum id quae voluptas velit iusto quasi distinctio.
-        </figure>
-        <figure>
-          4 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sequi?
-        </figure>
-        <figure>
-          5 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime nisi deserunt, dolorem accusamus sint ipsam dolor quae ab animi assumenda architecto placeat possimus fugit doloribus vel, corporis amet aliquam maiores!
-        </figure>
-        <figure>
-          6 - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </figure>
-      </section>
-    </div>
+    <section>
+      <figure>
+        1 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem rem nam dolore repellendus provident, voluptas necessitatibus vel cupiditate delectus, doloremque incidunt accusantium quia! Nisi molestiae totam natus, in assumenda accusantium.
+      </figure>
+      <figure>
+        2 - Lorem ipsum dolor sit amet.
+      </figure>
+      <figure>
+        3 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. At sunt harum ut rerum id quae voluptas velit iusto quasi distinctio.
+      </figure>
+      <figure>
+        4 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, sequi?
+      </figure>
+      <figure>
+        5 - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime nisi deserunt, dolorem accusamus sint ipsam dolor quae ab animi assumenda architecto placeat possimus fugit doloribus vel, corporis amet aliquam maiores!
+      </figure>
+      <figure>
+        6 - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      </figure>
+    </section>
 
     <!-- Vertical Grid -->
-    <div class="wrap">
-      <section>
-        <figure>1</figure>
-        <figure>2</figure>
-        <figure>3</figure>
-      </section>
-    </div>
+    <section>
+      <figure>1</figure>
+      <figure>2</figure>
+      <figure>3</figure>
+    </section>
+
+    <!-- Waffle Grid -->
+    <section>
+      <figure>1</figure>
+      <figure>2</figure>
+      <figure>3</figure>
+      <figure>4</figure>
+      <figure>5</figure>
+      <figure>6</figure>
+      <figure>7</figure>
+      <figure>8</figure>
+      <figure>9</figure>
+      <figure>10</figure>
+      <figure>11</figure>
+      <figure>12</figure>
+      <figure>13</figure>
+      <figure>14</figure>
+      <figure>15</figure>
+    </section>
 
 
+    <!--[if lt IE 9]>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.3.min.js"><\/script>')</script>
+    <!--<![endif]-->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
