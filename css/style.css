@@ -1,8 +1,4 @@
 @import 'reset/reset.css';
-html,
-body {
-  height: 100%;
-}
 html {
   font-weight: bold;
   color: #fff;
