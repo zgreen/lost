@@ -1,4 +1,4 @@
-// Lost Grid v4.0.0 - https://github.com/corysimmons/lost
+// Lost Grid v4.0.2 - https://github.com/corysimmons/lost
 
 $gutter = 30px
 $rtl = false
@@ -64,11 +64,22 @@ center($max-size = 980px, $pad = 0, $output = normal)
 /**
  * Vertically and/or horizontally align nested elements.
  *
- * @param {string} [$dir=both] - Direction. Either vertical, v, horizontal, or h. Defaults to both.
+ * @param {string} [$location=middle-center] - The position the nested element takes relative to the containing element.
+ * @param {boolean} [$flex=false] - Whether align() will use Flexbox to perform centering or not. Options are false or flex (for readability).
+ *
+ * - reset
+ * - top-left
+ * - top-center or top
+ * - top-right
+ * - middle-left or left
+ * - middle-right or right
+ * - bottom-left
+ * - bottom-center or bottom
+ * - bottom-right
  *
  * @example
  *   .parent
- *     align(vertical)
+ *     align()
  *     width: 600px
  *     height: 400px
  *     .child
@@ -76,25 +87,103 @@ center($max-size = 980px, $pad = 0, $output = normal)
  *       height: 150px
  */
 
-align($dir = both)
-  position: relative
-  > *
-    position: absolute
-    transform-style: preserve-3d
-    if ($dir == horizontal) or ($dir == h)
-      left: 50%
-      transform: translateX(-50%)
-    else if ($dir == vertical) or ($dir == v)
-      top: 50%
-      transform: translateY(-50%)
-    else if ($dir == reset)
-      top: auto
-      left: auto
-      transform: translate(0, 0)
+align($location = middle-center, $flex = false)
+  if $flex is false
+    position: relative
+    > *
+      position: absolute
+      if $location is reset
+        top: auto
+        right: auto
+        bottom: auto
+        left: auto
+        transform: translate3d(0, 0, 0)
+      else if $location is top-left
+        top: 0
+        right: auto
+        bottom: auto
+        left: 0
+        transform: translate3d(0, 0, 0)
+      else if $location is top-center or $location is top
+        top: 0
+        right: auto
+        bottom: auto
+        left: 50%
+        transform: translate3d(-50%, 0, 0)
+      else if $location is top-right
+        top: 0
+        right: 0
+        bottom: auto
+        left: auto
+        transform: translate3d(0, 0, 0)
+      else if $location is middle-left or $location is left
+        top: 50%
+        right: auto
+        bottom: auto
+        left: 0
+        transform: translate3d(0, -50%, 0)
+      else if $location is middle-right or $location is right
+        top: 50%
+        right: 0
+        bottom: auto
+        left: auto
+        transform: translate3d(0, -50%, 0)
+      else if $location is bottom-left
+        top: auto
+        right: auto
+        bottom: 0
+        left: 0
+        transform: translate3d(0, 0, 0)
+      else if $location is bottom-center or $location is bottom
+        top: auto
+        right: auto
+        bottom: 0
+        left: 50%
+        transform: translate3d(-50%, 0, 0)
+      else if $location is bottom-right
+        top: auto
+        right: 0
+        bottom: 0
+        left: auto
+        transform: translate3d(0, 0, 0)
+      else
+        top: 50%
+        right: auto
+        bottom: auto
+        left: 50%
+        transform: translate3d(-50%, -50%, 0)
+  if $flex is flex
+    display: flex
+    if $location is reset
+      justify-content: inherit
+      align-items: inherit
+    else if $location is top-left
+      justify-content: flex-start
+      align-items: flex-start
+    else if $location is top-center or $location is top
+      justify-content: center
+      align-items: flex-start
+    else if $location is top-right
+      justify-content: flex-end
+      align-items: flex-start
+    else if $location is middle-left or $location is left
+      justify-content: flex-start
+      align-items: center
+    else if $location is middle-right or $location is right
+      justify-content: flex-end
+      align-items: center
+    else if $location is bottom-left
+      justify-content: flex-start
+      align-items: flex-end
+    else if $location is bottom-center or $location is bottom
+      justify-content: center
+      align-items: flex-end
+    else if $location is bottom-right
+      justify-content: flex-end
+      align-items: flex-end
     else
-      top: 50%
-      left: 50%
-      transform: translate(-50%, -50%)
+      justify-content: center
+      align-items: center
 
 
 /**
