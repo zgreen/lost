@@ -69,7 +69,7 @@
 
 
 /**
- * Vertically and/or horizontally align nested elements.
+ * Align nested elements.
  *
  * @param {string} [@location=middle-center] - The position the nested element takes relative to the containing element.
  * @param {boolean} [@flex=false] - Whether align() will use Flexbox to perform centering or not. Options are false or flex (for readability).
@@ -86,7 +86,7 @@
  *
  * @example
  *   .parent {
- *     .align();
+ *     .align(right);
  *     width: 600px;
  *     height: 400px;
  *     .child {
@@ -498,14 +498,14 @@
  *
  * @example
  *   section {
- *     .masonry-row();
+ *     .masonry-wrap();
  *   }
  *   figure {
- *     .masonrycolumn(1 of 3);
+ *     .masonry-column(1 of 3);
  *   }
  */
 
-.masonry-row(@gut: @gutter) {
+.masonry-wrap(@gut: @gutter) {
   .cf();
   margin-left: -(@gut / 2);
   margin-right: -(@gut / 2);
