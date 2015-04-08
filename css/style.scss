@@ -27,9 +27,9 @@ figure {
 }
 
 section {
-  @include cf;
-  max-width: 1100px;
-  margin: $gutter auto;
+  @include center();
+  margin-top: $gutter;
+  margin-bottom: $gutter;
 
   &:last-of-type {
     margin-bottom: 0;
