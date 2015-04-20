@@ -7,7 +7,9 @@ var gulp = require('gulp'),
 
 var paths = {
   cssSource: 'src/css/',
-  cssDestination: 'dist/css/'
+  cssDestination: 'dist/css/',
+  jsSource: 'src/js/',
+  jsDestination: 'dist/js/'
 };
 
 gulp.task('styles', function() {
@@ -22,6 +24,11 @@ gulp.task('styles', function() {
     .pipe(gulp.dest(paths.cssDestination));
 });
 
-gulp.watch(paths.cssSource + '**/*.styl', ['styles']);
+gulp.task('scripts', function() {
+  return gulp.src(paths.jsSource + '**/*.js')
+    .pipe(gulp.dest(paths.jsDestination));
+});
 
-gulp.task('default', ['styles']);
+gulp.watch('src/**/*.*', ['styles', 'scripts']);
+
+gulp.task('default', ['styles', 'scripts']);
