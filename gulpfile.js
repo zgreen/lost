@@ -26,6 +26,8 @@ gulp.task('styles', function() {
 
 gulp.task('scripts', function() {
   return gulp.src(paths.jsSource + '**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.jsDestination));
 });
 

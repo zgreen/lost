@@ -5,3 +5,5 @@ $(function() {
     $(this).slideUp();
   });
 });
+
+//# sourceMappingURL=plugins.js.map
